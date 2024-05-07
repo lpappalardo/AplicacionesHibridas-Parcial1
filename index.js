@@ -26,9 +26,9 @@ app.use("/videojuegos", videojuegos_routes)
 app.use("/usuarios", usuarios_routes)
 app.use("/login", auth)
 
+app.use(express.static('static'));
+
 app.get('/', (req, res) => {
-    // const {pathname: root} = new URL('../src', import.meta.url)
-    // res.sendFile(path.join(new URL('./main.html', import.meta.url)));
     res.sendFile(__dirname + '/main.html');
 })
 

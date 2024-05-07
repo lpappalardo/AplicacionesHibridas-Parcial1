@@ -33,7 +33,32 @@ ruta.get('/', verificarToken, (req, res) =>{
     })
 })
 
+ruta.get('/paginas', verificarToken, (req, res) =>{
+    let pagina = req.query.pagina;
+    let cantidad = req.query.cantidad;
+    let resultado = pagesEstudios(pagina, cantidad)
+    resultado
+    .then(estudios => {
+        res.json(estudios)
+    })
+    .catch(err => {
+        res.status(400).json({err})
+    })
+})
+
+ruta.get('/ordenamiento', verificarToken, (req, res) =>{
+    let resultado = orderEstudios()
+    resultado
+    .then(estudios => {
+        res.json(estudios)
+    })
+    .catch(err => {
+        res.status(400).json({err})
+    })
+})
+
 ruta.get('/:id', verificarToken, (req, res) =>{
+    console.log("Estas aca")
     let resultado = getAEstudio(req.params.id)
     resultado
     .then(estudios => {
@@ -100,30 +125,6 @@ ruta.get('/juegosPublicados/:cantidad', verificarToken, (req, res) =>{
 
 ruta.post('/nombre/:nombreSelecionado', verificarToken, (req, res) =>{
     let resultado = nameEstudio(req.params.nombreSelecionado)
-    resultado
-    .then(estudios => {
-        res.json(estudios)
-    })
-    .catch(err => {
-        res.status(400).json({err})
-    })
-})
-
-ruta.get('/paginas', verificarToken, (req, res) =>{
-    let pagina = req.query.pagina;
-    let cantidad = req.query.cantidad;
-    let resultado = pagesEstudios(pagina, cantidad)
-    resultado
-    .then(estudios => {
-        res.json(estudios)
-    })
-    .catch(err => {
-        res.status(400).json({err})
-    })
-})
-
-ruta.get('/ordenamiento', verificarToken, (req, res) =>{
-    let resultado = orderEstudios()
     resultado
     .then(estudios => {
         res.json(estudios)
