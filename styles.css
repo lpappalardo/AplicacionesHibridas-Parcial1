@@ -1,0 +1,163 @@
+:root {
+    --clr-main: #007bbb;
+    --clr-white: rgb(244, 244, 244);
+    --clr-black: rgb(23, 23, 23);
+
+    --wrapper-max-width: 80%;
+}
+
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+body {
+    color: var(--clr-black);
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    background-color: var(--clr-white);
+}
+
+.container {
+    max-width: var(--wrapper-max-width);
+    margin: auto;
+}
+
+.bg {
+	background-color: var(--clr-main);
+	color: var(--clr-white);	
+} 
+
+.encabezado {
+	padding: 1rem;
+}
+
+.introduccion {
+	margin-top: 2.5rem; 
+	margin-bottom: 1rem; 
+}
+
+.introduccion h2 {
+	text-align: center;
+	margin-bottom: 1em;
+}
+
+.introduccion p {
+	text-align: center;
+}
+ 
+.card {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin: 2rem 0;
+}
+
+.card picture {
+	max-width: 100%;
+}
+
+.contenido-card {
+	padding: 2rem;
+	max-width: 100%;
+}
+
+.contenido-card h3 {
+	margin-bottom: 1.2rem;
+}
+
+.contenido-card p {
+	line-height: 1.5rem;
+}
+
+.li_item span  {
+	font-weight: 600;
+}
+
+.li_item {
+	list-style: none;
+	margin-bottom: 1em;
+}
+
+.request {
+	margin-bottom: 1.5rem
+}
+
+.request h3 {
+	margin-bottom: 0.8rem
+}
+
+.request .metodo,
+.request p {
+	margin-bottom: 0.6rem
+}
+
+.request p {
+	line-height: 1.5rem;
+}
+
+.codigo {
+	padding: 1rem;
+	border-radius: 4px;
+	background-color: var(--clr-black);
+	color: var(--clr-white);
+}
+
+.metodo span {
+	font-weight: 600;
+}
+
+.grilla {
+	display: grid;
+ 	grid-template-columns: repeat(1, 1fr);
+}
+
+footer {
+	padding-top: 1em;
+}
+
+.centrar{
+	background-color: var(--clr-black);
+	text-align: center;
+	padding: 0.5em;
+}
+
+.api h2 {
+	text-align: center;
+	margin-top: 1rem;
+	margin-bottom: 1.4rem;
+}
+
+@media screen and (min-width: 701px) {
+	.grilla {
+ 		grid-template-columns: repeat(2, 1fr);
+	}
+}
+
+@media screen and (min-width: 960px) {
+	.invertido {
+		order: -1;
+	}
+
+	.card {
+		display: flex;
+		flex-direction: row;
+	}
+
+	.card picture {
+		max-width: 40%;
+	}
+
+	.contenido-card  {
+		max-width: 60%;
+	}
+
+	.grilla {
+ 		grid-template-columns: repeat(3, 1fr);
+	}
+}
