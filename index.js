@@ -13,6 +13,7 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
 mongoose
+// .connect(process.env.CONNECTION)
 .connect("mongodb://127.0.0.1:27017/parcial")
 .then(() => {console.log("conectado a MongoDB")})
 .catch((err) => {console.log("No se pudo conectar: " + err)})

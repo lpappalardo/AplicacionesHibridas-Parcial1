@@ -2,3 +2,4 @@
 PORT=3000
 SEED=secreta
 EXPIRATION=1hr
+CONNECTION="mongodb+srv://lpappalardo:1234@cluster0.zaboat5.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
